@@ -10,7 +10,7 @@ def criar_tabela():
     conexao.commit()
     conexao.close()
 
-def inserir_produto(produto) -> Produto:
+def inserir_produto(produto):
     """Insere um novo produto no banco de dados."""
     conexao = obter_conexao()
     cursor = conexao.cursor()
@@ -21,7 +21,7 @@ def inserir_produto(produto) -> Produto:
     conexao.close()
     return produto
 
-def atualizar_produto(produto) -> bool:
+def atualizar_produto(produto):
     """Atualiza um produto existente no banco de dados."""
     conexao = obter_conexao()
     cursor = conexao.cursor()
@@ -31,7 +31,7 @@ def atualizar_produto(produto) -> bool:
     conexao.close()
     return (cursor.rowcount > 0)
 
-def excluir_produto(id:int) -> bool:
+def excluir_produto(id):
     """Exclui um produto do banco de dados pelo ID."""
     conexao = obter_conexao()
     cursor = conexao.cursor()
@@ -40,7 +40,7 @@ def excluir_produto(id:int) -> bool:
     conexao.close()
     return (cursor.rowcount > 0)
 
-def obter_produto_por_id(id:int) -> Produto:
+def obter_produto_por_id(id):
     """Obtém um produto pelo ID."""
     conexao = obter_conexao()
     cursor = conexao.cursor()
@@ -58,7 +58,7 @@ def obter_produto_por_id(id:int) -> Produto:
         )
     return None
 
-def obter_produtos_por_pagina(limite:int , offset:int) -> list[Produto]:
+def obter_produtos_por_pagina(limite, offset):
     """Obtém uma lista de produtos com paginação."""
     conexao = obter_conexao()
     cursor = conexao.cursor()
