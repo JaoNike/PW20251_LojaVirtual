@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block conteudo %}
+        <h1 class="display-6">Produtos em Destaque</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <img src="{{produto.imagem}}" class="img-thumbnall rounded" alt="{{produto.nome}}">
+            </div>
+            <div class="col-md-9">
+                <h2>{{produto.nome}}</h2>
+                <p>{{produto.descricao}}</p>
+                <p><strong>Preço: R$ {{produto.preco}}</strong></p>
+                <a href="/produto" class="btn btn-primary">Voltar para Produtos</a>
+            </div>
+        </div>
+{% endblock %}
+    
