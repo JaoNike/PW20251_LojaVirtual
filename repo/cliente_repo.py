@@ -42,7 +42,7 @@ def obter_cliente_por_id(id: int) -> Cliente:
                 cpf=resultado["cpf"],
                 telefone=resultado["telefone"],
                 email=resultado["email"],            
-                data_nascimento=datetime.strptime(resultado["data_nascimento)"], "%Y-%m-%d").date())
+                data_nascimento=datetime.strptime(resultado["data_nascimento"], "%Y-%m-%d").date())
         return None
 
 def obter_clientes_por_pagina(limite: int, offset: int) -> list[Cliente]:
@@ -57,5 +57,5 @@ def obter_clientes_por_pagina(limite: int, offset: int) -> list[Cliente]:
             cpf=resultado["cpf"],
             telefone=resultado["telefone"],
             email=resultado["email"],          
-            data_nascimento=datetime.strptime(resultado["data_nascimento)"], "%Y-%m-%d").date()
+            data_nascimento=datetime.strptime(resultado["data_nascimento"], "%Y-%m-%d").date()
         ) for resultado in resultados]
